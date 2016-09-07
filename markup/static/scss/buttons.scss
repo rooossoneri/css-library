@@ -1,35 +1,56 @@
 .all-buttons {
-  padding: 30px 0;
+	padding: 30px 0;
 }
 
 .buttons-1 {
-  background-color: $purple;
+	background-color: $purple;
+}
+
+.buttons-2 {
+	background-color: $yellow;
 }
 
 .buttons {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+
+	justify-content: space-between;
 }
 
 .btn {
-  font-family: $lato;
-  font-size: 18px;
-  font-weight: 700;
-  display: inline-block;
-  padding: 30px 80px;
-  transition: all .35s;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: $white;
-  border: 0;
+	font-family: $lato;
+	font-size: 18px;
+
+	position: relative;
+	z-index: 1;
+
+	display: inline-block;
+
+	padding: 30px 80px;
+
+	transition: all .35s;
+	text-decoration: none;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+
+	color: $white;
+	border: 0;
+	&::after {
+		position: absolute;
+		z-index: -1;
+
+		content: '';
+		transition: all .35s ease;
+	}
 }
 
 .btn-white {
-  border: 3px solid $white;
+	border: 3px solid $white;
 }
 
 .buttons__item {
-  margin-top: 30px;
+	display: block;
+
+	margin-top: 30px;
 }
 
 
@@ -37,10 +58,537 @@
 // SIMPLE background-color hover
 
 
-.hover-bgc:hover{
-	background-color: $white;
+.btn-1:hover {
 	color: $green;
+	background-color: $white;
 }
 
 
 // background-color hover from top to bottom
+
+.btn-2 {
+	&::after {
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 0;
+
+		background-color: $white;
+	}
+}
+
+.btn-2:hover {
+	color: $green;
+
+	&::after {
+		height: 100%;
+	}
+}
+
+
+// background color hover from bottom to top
+
+.btn-3 {
+	&::after {
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
+		height: 0;
+
+		background-color: $white;
+	}
+}
+
+.btn-3:hover {
+	color: $green;
+
+	&::after {
+		height: 100%;
+	}
+}
+
+
+
+// background color hover from left to right
+
+
+.btn-4 {
+	&::after {
+		top: 0;
+		left: 0;
+
+		width: 0;
+		height: 100%;
+
+		background-color: $white;
+	}
+}
+
+.btn-4:hover {
+	color: $green;
+
+	&::after {
+		width: 100%;
+	}
+}
+
+
+
+// background color hover from right to left
+
+
+.btn-5 {
+	&::after {
+		top: 0;
+		right: 0;
+
+		width: 0;
+		height: 100%;
+
+		background-color: $white;
+	}
+}
+
+.btn-5:hover {
+	color: $green;
+
+	&::after {
+		width: 100%;
+	}
+}
+
+
+// background hover from center to left and right
+
+
+.btn-6 {
+	&::after {
+		top: 50%;
+		left: 50%;
+
+		width: 0;
+		height: 103%;
+
+		transform: translate(-50%, -50%);
+
+		opacity: 0;
+		background-color: $white;
+	}
+}
+
+.btn-6:hover {
+	color: $green;
+
+	&::after {
+		width: 90%;
+
+		opacity: 1;
+	}
+}
+
+.btn-6:active::after {
+	width: 101%;
+
+	opacity: 1;
+}
+
+
+// background color from center with rotate
+
+
+.btn-7 {
+	overflow: hidden;
+
+	&:hover {
+		color: $green;
+	}
+
+	&::after {
+		top: 50%;
+		left: 50%;
+
+		width: 101%;
+		height: 0;
+
+		transform: translate(-50%, -50%) rotate(45deg);
+
+		opacity: 0;
+		background-color: $white;
+	}
+}
+
+.btn-7:hover::after {
+	height: 230%;
+
+	opacity: 1;
+}
+
+.btn-7:active::after {
+	height: 400%;
+
+	opacity: 1;
+}
+
+
+
+// background-color from center to top and bottom
+
+
+.btn-8 {
+	&:hover {
+		color: $green;
+	}
+
+	&::after {
+		top: 50%;
+		left: 50%;
+
+		width: 101%;
+		height: 0;
+
+		transform: translate(-50%, -50%);
+
+		opacity: 0;
+		background-color: $white;
+	}
+}
+
+.btn-8:hover::after {
+	height: 75%;
+
+	opacity: 1;
+}
+
+.btn-8:active::after {
+	height: 100%;
+
+	opacity: 1;
+}
+
+
+
+
+// background color from right border
+
+.btn-9 {
+	overflow: hidden;
+
+	&::after {
+		top: 0;
+		right: 0;
+
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+		background-color: $white;
+	}
+}
+
+.btn-9:hover {
+	color: $green;
+}
+
+.btn-9:hover::after {
+	width: 100%;
+	height: 100%;
+
+	opacity: 1;
+}
+
+
+
+
+// background from top left border
+
+
+
+.btn-10 {
+	overflow: hidden;
+
+	&::after {
+		top: 0;
+		left: 0;
+
+		width: 0;
+		height: 0;
+
+
+		opacity: 0;
+		background-color: $white;
+	}
+}
+
+.btn-10:hover {
+	color: $green;
+}
+
+.btn-10:hover::after {
+	width: 100%;
+	height: 100%;
+
+	opacity: 1;
+}
+
+
+
+// background color from bottom left border
+
+
+.btn-11 {
+	overflow: hidden;
+
+	&::after {
+		bottom: 0;
+		left: 0;
+
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+		background-color: $white;
+	}
+}
+
+.btn-11:hover {
+	color: $green;
+}
+
+.btn-11:hover::after {
+	width: 100%;
+	height: 100%;
+
+	opacity: 1;
+}
+
+
+
+// background from bottom right border
+
+
+.btn-12 {
+	overflow: hidden;
+
+	&::after {
+		right: 0;
+		bottom: 0;
+
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+		background-color: $white;
+	}
+}
+
+.btn-12:hover {
+	color: $green;
+}
+
+.btn-12:hover::after {
+	width: 100%;
+	height: 100%;
+
+	opacity: 1;
+}
+
+
+
+// border dashed
+
+
+.btn-13.btn-white:hover {
+	transition: all .35s ease;
+
+	border: 3px dashed $white;
+}
+
+
+
+// border dashed with border-radius
+
+
+.btn-14.btn-white:hover {
+	transition: all .35s ease;
+
+	border: 3px dashed $white;
+	border-radius: 30px;
+}
+
+
+// border dashed with border-radius and circle
+
+
+@keyframes rotates {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+.btn-15.btn-white:hover {
+	border: 3px dotted $white;
+}
+
+
+
+
+// border color from top left border
+
+
+.btn-16 {
+	&::before,
+	&::after {
+		width: 0;
+		height: 0;
+
+		border: 3px solid transparent;
+	}
+
+	&::before {
+		position: absolute;
+		top: -3px;
+		right: -3px;
+
+		content: '';
+	}
+
+	&::after {
+		top: -3px;
+		left: -3px;
+	}
+}
+
+.btn-16:hover {
+
+	&::before,
+	&::after {
+		width: 100%;
+		height: 100%;
+	}
+
+	&::before {
+		transition: width .25s ease-out, height .25s ease-out .25s;
+
+		border-top-color: $green;
+		border-right-color: $green;
+	}
+
+	&::after {
+		transition: width .25s ease-out, height .25s ease-out .25s;
+
+		border-bottom-color: $green;
+		border-left-color: $green;
+	}
+}
+
+
+
+
+// border-color from top-right to the end
+
+
+.btn-17 {
+
+	&::before,
+	&::after {
+		width: 0;
+		height: 0;
+
+		border: 3px solid transparent;
+	}
+
+	&::before {
+		position: absolute;
+		top: -3px;
+		right: -3px;
+
+		content: '';
+	}
+
+	&::after {
+		bottom: -3px;
+		left: -3px;
+	}
+}
+
+.btn-17:hover {
+
+	&::before,
+	&::after {
+		width: 100%;
+		height: 100%;
+	}
+
+	&::before {
+		transition: width .25s ease-out, height .25s ease-out .25s;
+
+		border-top-color: $green;
+		border-right-color: $green;
+	}
+
+	&::after {
+		transition: width .25s ease-out, height .25s ease-out .25s;
+
+		border-bottom-color: $green;
+		border-left-color: $green;
+	}
+}
+
+
+
+// one more
+
+
+.btn-18 {
+
+	&::before,
+	&::after {
+		width: 0;
+		height: 0;
+
+		border: 3px solid transparent;
+	}
+
+	&::before {
+		position: absolute;
+		top: -3px;
+		left: -3px;
+		content: '';
+	}
+
+	&::after {
+		right: -3px;
+		bottom: -3px;
+	}
+}
+
+.btn-18:hover {
+
+	&::before,
+	&::after {
+		width: 100%;
+		height: 100%;
+	}
+
+	&::before {
+		transition: width .25s ease-out, height .25s ease-out .25s;
+
+		border-top-color: $green;
+		border-right-color: $green;
+	}
+
+	&::after {
+		transition: border-color 0s ease-out .5s, width .25s ease-out .5s, height .25s ease-out .75s;
+
+		border-bottom-color: $green;
+		border-left-color: $green;
+	}
+}
