@@ -34,6 +34,7 @@
 
 	color: $white;
 	border: 0;
+
 	&::after {
 		position: absolute;
 		z-index: -1;
@@ -454,15 +455,15 @@
 
 	&::before {
 		position: absolute;
-		top: -3px;
-		right: -3px;
+		top: -2px;
+		right: -2px;
 
 		content: '';
 	}
 
 	&::after {
-		top: -3px;
-		left: -3px;
+		top: -2px;
+		left: -2px;
 	}
 }
 
@@ -507,15 +508,15 @@
 
 	&::before {
 		position: absolute;
-		top: -3px;
-		right: -3px;
+		top: -2px;
+		right: -2px;
 
 		content: '';
 	}
 
 	&::after {
-		bottom: -3px;
-		left: -3px;
+		bottom: -2px;
+		left: -2px;
 	}
 }
 
@@ -559,14 +560,14 @@
 
 	&::before {
 		position: absolute;
-		top: -3px;
-		left: -3px;
+		top: -2px;
+		left: -2px;
 		content: '';
 	}
 
 	&::after {
-		right: -3px;
-		bottom: -3px;
+		right: -2px;
+		bottom: -2px;
 	}
 }
 
@@ -590,5 +591,265 @@
 
 		border-bottom-color: $green;
 		border-left-color: $green;
+	}
+}
+
+
+
+
+
+
+
+// BUTTONS WITH ICONS
+
+.btn-yellow {
+	background-color: $orange;
+	overflow: hidden;
+
+	span {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+	  transition: all 0.3s;
+	}
+
+	&:hover {
+		background-color: $orange-hover;
+	}
+
+	&:active {
+		background-color: $orange-active;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		transition: all .35s;
+		font-family: FontAwesome;
+	}
+}
+
+
+// arrow from center
+
+.btn2-1 {
+
+	&:hover {
+
+		&::before {
+			left: 50px;
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f060';
+		left: 120px;
+		opacity: 0;
+		top: 33px;
+	}
+}
+
+
+
+// arrow left from left
+
+
+.btn2-2 {
+
+	&:hover {
+
+		&::before {
+			left: 50px;
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f060';
+		left: -200px;
+		opacity: 0;
+		top: 33px;
+	}
+}
+
+
+
+
+// arrow right from left
+
+
+.btn2-3 {
+
+	&:hover {
+
+		&::before {
+			right: 50px;
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f061';
+		right: 500px;
+		opacity: 0;
+		top: 33px;
+	}
+}
+
+
+
+// arrow right from right
+
+
+.btn2-4 {
+
+	&:hover {
+
+		&::before {
+			right: 50px;
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f061';
+		right: -100px;
+		opacity: 0;
+		top: 33px;
+	}
+}
+
+
+
+// hide text show icon
+
+
+.btn2-5 {
+
+	span {
+	  // backface-visibility: hidden;
+	}
+
+	&:hover {
+
+		span {
+			transform: translateY(300%);
+		}
+
+		&::before {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f014';
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -300%);
+		opacity: 0;
+		font-size: 2em;
+	}
+}
+
+
+
+
+// hide text to right
+
+
+.btn2-6 {
+
+	span {
+	  // backface-visibility: hidden;
+	}
+
+	&:hover {
+
+		span {
+			transform: translateX(300%);
+		}
+
+		&::before {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f014';
+		top: 50%;
+		left: 50%;
+		transform: translate(-500%, -50%);
+		opacity: 0;
+		font-size: 2em;
+	}
+}
+
+
+
+// hide text to top
+
+
+.btn2-7 {
+
+	span {
+	  // backface-visibility: hidden;
+	}
+
+	&:hover {
+
+		span {
+			transform: translateY(-300%);
+		}
+
+		&::before {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f014';
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 300%);
+		opacity: 0;
+		font-size: 2em;
+	}
+}
+
+
+
+// hide text to left
+
+
+.btn2-8 {
+
+	span {
+	  // backface-visibility: hidden;
+	}
+
+	&:hover {
+
+		span {
+			transform: translateX(-300%);
+		}
+
+		&::before {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
+
+	&::before {
+		content: '\f014';
+		top: 50%;
+		left: 50%;
+		transform: translate(500%, -50%);
+		opacity: 0;
+		font-size: 2em;
 	}
 }
